@@ -76,7 +76,7 @@ const useAppStore = create<AppState>()(
           id: crypto.randomUUID(), 
           imageUrl, 
           diaryText, 
-          date: format(new Date(), 'yyyy-MM-dd')
+          date: new Date().toISOString()
         }]
       })),
       

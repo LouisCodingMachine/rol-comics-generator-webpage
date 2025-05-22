@@ -27,7 +27,7 @@ const EditorScreen: React.FC = () => {
   const [isAddingDiary, setIsAddingDiary] = useState(false);
 
   const handleGenerateComic = async () => {
-    if (diaries.length === 0) return;
+    if (routines.filter(r => r.done).length === 0 && diaries.length === 0) return;
 
     try {
       // Prepare the diary text
@@ -59,14 +59,14 @@ const EditorScreen: React.FC = () => {
       );
 
       // Add the comic to the store
-      addComic(response.data.url, diaryText);
+      addComic(response.data.imageUrl, diaryText);
       
       // Navigate to feed view
       setView('feed');
       
     } catch (error) {
       console.error('Error generating comic:', error);
-      alert('Failed to generate comic. Please try again.');
+      alert('다시 시도해주세요');
       setView('editor');
     }
   };
