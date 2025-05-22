@@ -52,8 +52,6 @@ const EditorScreen: React.FC = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYiLCJ1c2VybmFtZSI6ImtrdDc1MiIsImlhdCI6MTc0NzY1OTcyMSwiZXhwIjoxNzc5MTk1NzIxfQ.tpcuW7ACWS_VrjcQle4lD1ARAcFhCcQjOGWxQicLHK0'
           }
         }
       );
