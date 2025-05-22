@@ -18,6 +18,7 @@ export interface Comic {
   id: string;
   imageUrl: string;
   diaryText: string;
+  routineSummary: string;
   date: string;
 }
 

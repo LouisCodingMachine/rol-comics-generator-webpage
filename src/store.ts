@@ -16,7 +16,7 @@ interface AppState {
   addDiary: (diary: Omit<Diary, 'id' | 'date'>) => void;
   updateDiary: (id: string, data: Partial<Diary>) => void;
   deleteDiary: (id: string) => void;
-  addComic: (imageUrl: string, diaryText: string) => void;
+  addComic: (imageUrl: string, diaryText: string, routineSummary: string) => void;
   deleteComic: (id: string) => void;
 }
 
@@ -71,12 +71,13 @@ const useAppStore = create<AppState>()(
         diaries: state.diaries.filter(diary => diary.id !== id)
       })),
       
-      addComic: (imageUrl, diaryText) => set((state) => ({
+      addComic: (imageUrl, diaryText, routineSummary) => set((state) => ({
         comics: [...state.comics, { 
           id: crypto.randomUUID(), 
           imageUrl, 
-          diaryText, 
-          date: new Date().toISOString()
+          diaryText,
+          routineSummary,
+          date: new Date().toISOString(),
         }]
       })),
       

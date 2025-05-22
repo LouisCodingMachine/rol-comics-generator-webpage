@@ -89,6 +89,11 @@ const ComicCard: React.FC<ComicCardProps> = ({ comic, isLatest = false }) => {
                   <div className="flex justify-between items-center mb-3">
                     <p className="text-sm text-[#C4C4C4]">{formattedDate}</p>
                   </div>
+
+                  <p className="text-[#C4C4C4] text-xs mb-2">
+                    <strong>Routine:</strong> {comic.routineSummary}
+                  </p>
+
                   <p className="text-white text-sm whitespace-pre-line">
                     {comic.diaryText}
                   </p>
