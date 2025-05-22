@@ -12,7 +12,7 @@ interface ComicCardProps {
 const ComicCard: React.FC<ComicCardProps> = ({ comic, isLatest = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const formattedDate = format(parseISO(comic.date), 'MMM d, yyyy');
-
+  console.log("comic.imageUrl: ", comic.imageUrl);
   return (
     <>
       <div 
